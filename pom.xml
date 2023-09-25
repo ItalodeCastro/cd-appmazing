@@ -55,7 +55,7 @@
 	</build>
 	<profiles>
 		<profile>
-			<id>run__datebase</id>
+			<id>run_database</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -64,7 +64,7 @@
 						<version>${maven-antrun-plugin.version}</version>
 						<executions>
 							<execution>
-								<id>configure__database</id>
+								<id>configure_database</id>
 								<phase>validate</phase>
 								<goals>
 									<goal>run</goal>
@@ -84,13 +84,13 @@
 						<artifactId>exec-maven-plugin</artifactId>
 						<version>${exec-maven-plugin.version}</version>
 						<configuration>
-							<mainClass>org.hsqldb.server</mainClass>
+							<mainClass>org.hsqldb.Server</mainClass>
 							<arguments>
 								<argument>-port</argument>
 								<argument>9013</argument>
-								<argument>database.0</argument>
+								<argument>-database.0</argument>
 								<argument>${hsqldatabase.path}/templateDB</argument>
-								<argument>dbname.0</argument>
+								<argument>-dbname.0</argument>
 								<argument>templateDB</argument>
 							</arguments>
 						</configuration>
