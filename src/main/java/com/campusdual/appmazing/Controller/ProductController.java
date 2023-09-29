@@ -44,5 +44,16 @@ public class ProductController {
 
     }
 
+    @PutMapping(value = "/update")
+    public int updateProduct (@RequestBody ProductDTO product){
+        return this.productService.updateProduct(product);
+
+    }
+
+    @DeleteMapping(value = "/delete")
+    public int deleteProduct (@RequestBody ProductDTO product){
+        return this.productService.deleteProduct(product);
+
+    }
         //"date_added": "2022-01-01T23:00:00.000+00:00"
 }
