@@ -1,6 +1,7 @@
 package com.campusdual.appmazing.api;
 
 import com.campusdual.appmazing.model.dto.AgendaDTO;
+import com.campusdual.appmazing.model.dto.ProductDTO;
 
 import java.util.List;
 
@@ -12,6 +13,9 @@ import java.util.List;
 
         int updateAgenda (AgendaDTO agenda);
         int deleteAgenda (AgendaDTO agenda);
+
+
+
 
     }
 

@@ -11,5 +11,9 @@ public interface IProductService {
     int insertProduct (ProductDTO product);
     int updateProduct (ProductDTO product);
     int deleteProduct (ProductDTO product);
+    int buyProduct (ProductDTO product);
+
+    int buyProduct(ProductDTO product, int quantity);
+
 
 }

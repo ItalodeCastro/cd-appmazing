@@ -1,9 +1,11 @@
 package com.campusdual.appmazing.service;
 
 import com.campusdual.appmazing.api.IAgendaService;
+import com.campusdual.appmazing.api.IProductService;
 import com.campusdual.appmazing.model.Agenda;
 import com.campusdual.appmazing.model.dao.AgendaDao;
 import com.campusdual.appmazing.model.dto.AgendaDTO;
+import com.campusdual.appmazing.model.dto.ProductDTO;
 import com.campusdual.appmazing.model.dto.dtopmapper.AgendaMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -18,6 +20,12 @@ public class AgendaService implements IAgendaService {
 
     @Autowired
     private AgendaDao agendaDao;
+
+    @Autowired
+    private Pro
+
+    @Autowired
+    private IProductService productService;
 
     @Override
     public AgendaDTO queryAgenda(AgendaDTO agendaDTO) {
@@ -49,6 +57,15 @@ public class AgendaService implements IAgendaService {
         Agenda agendaEntity = AgendaMapper.INSTANCE.toEntity(agenda);
         agendaDao.delete(agendaEntity);
         return id;
+
+    @Override
+    public void buyProduct(AgendaDTO agenda, ProductDTO product, int quantity) {
+            Product productEntity = productMapper.i
+            ProductDTO productToBuy = productService.queryProduct(product);
+
+            if (productToBuy.isActive() && quantity < productToBuy.getStock()){
+
+        }
     }
 
 }

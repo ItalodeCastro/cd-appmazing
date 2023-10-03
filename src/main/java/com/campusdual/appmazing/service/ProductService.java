@@ -50,4 +50,21 @@ public class ProductService implements IProductService {
         this.productDao.delete(product);
         return id;
     }
-}
+
+    @Override
+    public int buyProduct(ProductDTO product) {
+        return 0;
+    }
+
+    @Override
+    public int buyProduct(ProductDTO product, int quantity) {
+        ProductDTO productToBuy = this.queryProduct(product);
+        if (productToBuy.isActive() && quantity <= productToBuy.getStock()){
+            productToBuy.setStock(productToBuy.getStock()-quantity);
+            this.updateProduct(productToBuy);
+        }
+        return productToBuy.getStock();
+    }
+
+    }
+

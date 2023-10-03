@@ -55,5 +55,21 @@ public class ProductController {
         return this.productService.deleteProduct(product);
 
     }
+    /*@PutMapping(value = "/buy")
+    public int buyProduct (@RequestBody ProductDTO ProductDTO) {
+        return this.productService.buyProduct(ProductDTO, quantity);*/
+    }
+
+    @PutMapping(value = "/buy")
+    public int buyProduct (@RequestBody ProductDTO ProductDTO){
+
+        //return this.productService.buyProduct(ProductDTO, quantity);
+
+
+
+
+
+
+
         //"date_added": "2022-01-01T23:00:00.000+00:00"
 }
